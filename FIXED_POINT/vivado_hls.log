@@ -1,0 +1,425 @@
+INFO: [HLS 200-10] Running '/opt/Xilinx/Vivado/2018.2/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'gse5' on host 'administreur-OptiPlex-9020' (Linux_x86_64 version 4.15.0-115-generic) on Tue Oct 20 10:20:05 CEST 2020
+INFO: [HLS 200-10] On os Ubuntu 18.04.3 LTS
+INFO: [HLS 200-10] In directory '/home/gse5/Bureau/HLS_IA/FIXED_POINT'
+INFO: [HLS 200-10] Opening project '/home/gse5/Bureau/HLS_IA/FIXED_POINT/Fixed_Point'.
+INFO: [HLS 200-10] Adding design file 'utils.c' to the project
+INFO: [HLS 200-10] Adding design file 'pool.c' to the project
+INFO: [HLS 200-10] Adding design file 'lenet_weights.hdf5' to the project
+INFO: [HLS 200-10] Adding design file 'lenet_cnn_float.c' to the project
+INFO: [HLS 200-10] Adding design file 'fc.c' to the project
+INFO: [HLS 200-10] Adding design file 'conv.c' to the project
+INFO: [HLS 200-10] Adding test bench file 'mnist' to the project
+INFO: [HLS 200-10] Adding test bench file 'lenet_cnn_float.c' to the project
+INFO: [HLS 200-10] Opening solution '/home/gse5/Bureau/HLS_IA/FIXED_POINT/Fixed_Point/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+WARNING: [HLS 200-40] Skipped source file 'lenet_weights.hdf5'. Source files must have extensions .c, .C, .cc, .cpp, .c++, .cp, or .cxx.
+INFO: [HLS 200-10] Analyzing design file 'conv.c' ... 
+INFO: [HLS 200-10] Analyzing design file 'fc.c' ... 
+INFO: [HLS 200-10] Analyzing design file 'lenet_cnn_float.c' ... 
+INFO: [HLS 200-10] Analyzing design file 'pool.c' ... 
+INFO: [HLS 200-10] Analyzing design file 'utils.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 369.926 ; gain = 0.113 ; free physical = 8292 ; free virtual = 28369
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 369.926 ; gain = 0.113 ; free physical = 8292 ; free virtual = 28369
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<63, 39, false, (ap_q_mode)5, (ap_o_mode)3, 0>::operator<<' into 'generic_cast_IEEE754<short, (ap_q_mode)6, float>' (/wrk/2018.2/continuous/2018_06_14_2258646/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:17).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<1, 16, false, (ap_q_mode)5, (ap_o_mode)0, 0>::overflow_adjust' into 'ap_fixed_base<1, 16, false, (ap_q_mode)5, (ap_o_mode)0, 0>::ap_fixed_base<63, 39, false, (ap_q_mode)5, (ap_o_mode)3, 0>' ().
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 561.812 ; gain = 192.000 ; free physical = 8135 ; free virtual = 28229
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<short, (ap_q_mode)6, float>' (/wrk/2018.2/continuous/2018_06_14_2258646/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:14) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<short, (ap_q_mode)6, float>' (/wrk/2018.2/continuous/2018_06_14_2258646/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:17) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<short, (ap_q_mode)6, float>' (/wrk/2018.2/continuous/2018_06_14_2258646/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:49) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<short, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<short, float>' (/wrk/2018.2/continuous/2018_06_14_2258646/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:98) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<short, float>' into '__hls_fptosi_float_i16' (/wrk/2018.2/continuous/2018_06_14_2258646/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:49) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i16' into 'conv_sum31' (conv.c:18) automatically.
+INFO: [XFORM 203-602] Inlining function 'max' into 'Pool1_24x24x20_2x2x20_2_0' (pool.c:25) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i16' into 'conv_sum.132' (conv.c:18) automatically.
+INFO: [XFORM 203-602] Inlining function 'max' into 'Pool2_8x8x40_2x2x40_2_0' (pool.c:48) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i16' into 'fc_sum' (fc.c:15) automatically.
+INFO: [XFORM 203-602] Inlining function 'Fc1_40_400' into 'lenet_cnn' (lenet_cnn_float.c:90) automatically.
+INFO: [XFORM 203-602] Inlining function 'Fc2_400_10' into 'lenet_cnn' (lenet_cnn_float.c:96) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 561.812 ; gain = 192.000 ; free physical = 8136 ; free virtual = 28230
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1' (fc.c:26) in function 'Fc1_40_400' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1.1.1' (conv.c:70) in function 'Conv2_12x12x20_5x5x40_1_0' for pipelining.
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'fc_sum' (fc.c:5).
+WARNING: [XFORM 203-505] Ignored pipeline directive for loop 'Loop-1.1' (fc.c:10) because its parent loop or function is pipelined.
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'conv_sum.1' (conv.c:9:25).
+WARNING: [XFORM 203-505] Ignored pipeline directive for loop 'Loop-1.1' (conv.c:11) because its parent loop or function is pipelined.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1' (fc.c:29) in function 'Fc1_40_400' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.1.1' (conv.c:73) in function 'Conv2_12x12x20_5x5x40_1_0' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.1.1.1' (conv.c:75) in function 'Conv2_12x12x20_5x5x40_1_0' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.1.1.1.1' (conv.c:76) in function 'Conv2_12x12x20_5x5x40_1_0' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1' (fc.c:9) in function 'fc_sum' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1' (fc.c:10) in function 'fc_sum' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1' (conv.c:9) in function 'conv_sum.1' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1' (conv.c:11) in function 'conv_sum.1' completely.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::mantissa' into 'generic_cast_IEEE754<short, (ap_q_mode)6, float>' (/wrk/2018.2/continuous/2018_06_14_2258646/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:14) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'generic_cast_IEEE754<short, (ap_q_mode)6, float>' (/wrk/2018.2/continuous/2018_06_14_2258646/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:17) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'generic_cast_IEEE754<short, (ap_q_mode)6, float>' (/wrk/2018.2/continuous/2018_06_14_2258646/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:49) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<short, (ap_q_mode)6, float>' into 'generic_cast_IEEE754<short, float>' (/wrk/2018.2/continuous/2018_06_14_2258646/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:98) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_cast_IEEE754<short, float>' into '__hls_fptosi_float_i16' (/wrk/2018.2/continuous/2018_06_14_2258646/src/products/hls/hls_lib/hlsmath/src/lib_floatconversion.cpp:49) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i16' into 'conv_sum' (conv.c:18) automatically.
+INFO: [XFORM 203-602] Inlining function 'max' into 'Pool1_24x24x20_2x2x20_2_0' (pool.c:25) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i16' into 'conv_sum.1' (conv.c:18) automatically.
+INFO: [XFORM 203-602] Inlining function 'max' into 'Pool2_8x8x40_2x2x40_2_0' (pool.c:48) automatically.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i16' into 'fc_sum' (fc.c:15) automatically.
+INFO: [XFORM 203-602] Inlining function 'Fc2_400_10' into 'lenet_cnn' (lenet_cnn_float.c:96) automatically.
+INFO: [XFORM 203-602] Inlining function 'conv_sum' into 'Conv1_28x28x1_5x5x20_1_0' (conv.c:43) automatically.
+INFO: [XFORM 203-11] Balancing expressions in function 'fc_sum' (fc.c:5)...15 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'conv_sum.1' (conv.c:11:2)...24 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'Fc1_40_400' (fc.c:18)...79 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'Conv2_12x12x20_5x5x40_1_0' (conv.c:56)...39 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:51 ; elapsed = 00:00:51 . Memory (MB): peak = 561.812 ; gain = 192.000 ; free physical = 8115 ; free virtual = 28212
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (fc.c:45:7) in function 'lenet_cnn'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1.1.1.1' (pool.c:45:13) in function 'Pool2_8x8x40_2x2x40_2_0'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-1.1.1' (pool.c:43:11) in function 'Pool2_8x8x40_2x2x40_2_0' : 
+
+the outer loop is not a perfect loop because there is nontrivial logic in the loop latch.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1.1' (pool.c:42:9) in function 'Pool2_8x8x40_2x2x40_2_0'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (pool.c:41:7) in function 'Pool2_8x8x40_2x2x40_2_0'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1.1.1.1' (pool.c:22:13) in function 'Pool1_24x24x20_2x2x20_2_0'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-1.1.1' (pool.c:20:11) in function 'Pool1_24x24x20_2x2x20_2_0' : 
+
+the outer loop is not a perfect loop because there is nontrivial logic in the loop latch.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1.1' (pool.c:19:9) in function 'Pool1_24x24x20_2x2x20_2_0'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (pool.c:18:7) in function 'Pool1_24x24x20_2x2x20_2_0'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1.1' (conv.c:69:7) in function 'Conv2_12x12x20_5x5x40_1_0'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (conv.c:68:6) in function 'Conv2_12x12x20_5x5x40_1_0'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1.1.1.2' (conv.c:9:6) in function 'Conv1_28x28x1_5x5x20_1_0'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-1.1.1' (conv.c:35:8) in function 'Conv1_28x28x1_5x5x20_1_0' : 
+
+more than one sub loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1.1' (conv.c:34:7) in function 'Conv1_28x28x1_5x5x20_1_0'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (conv.c:33:6) in function 'Conv1_28x28x1_5x5x20_1_0'.
+WARNING: [XFORM 203-631] Renaming function 'Pool2_8x8x40_2x2x40_2_0' to 'Pool2_8x8x40_2x2x40_' (pool.c:4:29)
+WARNING: [XFORM 203-631] Renaming function 'Pool1_24x24x20_2x2x20_2_0' to 'Pool1_24x24x20_2x2x2' (pool.c:4:29)
+WARNING: [XFORM 203-631] Renaming function 'Conv2_12x12x20_5x5x40_1_0' to 'Conv2_12x12x20_5x5x4' (conv.c:61:9)
+WARNING: [XFORM 203-631] Renaming function 'Conv1_28x28x1_5x5x20_1_0' to 'Conv1_28x28x1_5x5x20' (conv.c:9:24)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:22 ; elapsed = 00:01:23 . Memory (MB): peak = 753.812 ; gain = 384.000 ; free physical = 7984 ; free virtual = 28081
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'lenet_cnn' ...
+WARNING: [SYN 201-103] Legalizing function name 'conv_sum.16' to 'conv_sum_16'.
+WARNING: [SYN 201-103] Legalizing function name 'Pool2_8x8x40_2x2x40_' to 'Pool2_8x8x40_2x2x40_s'.
+WARNING: [SYN 201-107] Renaming port name 'lenet_cnn/input' to 'lenet_cnn/input_r' to avoid the conflict with HDL keywords or other object names.
+WARNING: [SYN 201-107] Renaming port name 'lenet_cnn/output' to 'lenet_cnn/output_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Conv1_28x28x1_5x5x20' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1.2'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 83.45 seconds; current allocated memory: 345.327 MB.
+INFO: [HLS 200-434] Only 1 loops out of a total 4 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.11 seconds; current allocated memory: 345.977 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Pool1_24x24x20_2x2x2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1.1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.31 seconds; current allocated memory: 346.409 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.07 seconds; current allocated memory: 346.764 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv_sum_16' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'conv_sum.16'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('p_of_matrix_load_36', conv.c:12) on array 'p_of_matrix' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'p_of_matrix'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 13, Depth = 29.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.37 seconds; current allocated memory: 347.838 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.27 seconds; current allocated memory: 349.150 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Conv2_12x12x20_5x5x4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 13, distance = 1, offset = 1)
+   between 'call' operation ('tmp_s', conv.c:79) to 'conv_sum.16' and 'store' operation (conv.c:77) of variable 'input_load', conv.c:77 on array 'matrix_sum', conv.c:61.
+WARNING: [SCHED 204-62] II = 14 is infeasible due to multiple pipeline iteration latency = 29 and incompatible II = 13 of 'call' operation ('tmp_s', conv.c:79) to 'conv_sum.16'.
+WARNING: [SCHED 204-62] II = 15 is infeasible due to multiple pipeline iteration latency = 29 and incompatible II = 13 of 'call' operation ('tmp_s', conv.c:79) to 'conv_sum.16'.
+WARNING: [SCHED 204-62] II = 16 is infeasible due to multiple pipeline iteration latency = 29 and incompatible II = 13 of 'call' operation ('tmp_s', conv.c:79) to 'conv_sum.16'.
+WARNING: [SCHED 204-62] II = 17 is infeasible due to multiple pipeline iteration latency = 29 and incompatible II = 13 of 'call' operation ('tmp_s', conv.c:79) to 'conv_sum.16'.
+WARNING: [SCHED 204-62] II = 18 is infeasible due to multiple pipeline iteration latency = 29 and incompatible II = 13 of 'call' operation ('tmp_s', conv.c:79) to 'conv_sum.16'.
+WARNING: [SCHED 204-62] II = 19 is infeasible due to multiple pipeline iteration latency = 29 and incompatible II = 13 of 'call' operation ('tmp_s', conv.c:79) to 'conv_sum.16'.
+WARNING: [SCHED 204-62] II = 20 is infeasible due to multiple pipeline iteration latency = 29 and incompatible II = 13 of 'call' operation ('tmp_s', conv.c:79) to 'conv_sum.16'.
+WARNING: [SCHED 204-62] II = 21 is infeasible due to multiple pipeline iteration latency = 29 and incompatible II = 13 of 'call' operation ('tmp_s', conv.c:79) to 'conv_sum.16'.
+WARNING: [SCHED 204-62] II = 22 is infeasible due to multiple pipeline iteration latency = 29 and incompatible II = 13 of 'call' operation ('tmp_s', conv.c:79) to 'conv_sum.16'.
+WARNING: [SCHED 204-62] II = 23 is infeasible due to multiple pipeline iteration latency = 29 and incompatible II = 13 of 'call' operation ('tmp_s', conv.c:79) to 'conv_sum.16'.
+WARNING: [SCHED 204-62] II = 24 is infeasible due to multiple pipeline iteration latency = 29 and incompatible II = 13 of 'call' operation ('tmp_s', conv.c:79) to 'conv_sum.16'.
+WARNING: [SCHED 204-62] II = 25 is infeasible due to multiple pipeline iteration latency = 29 and incompatible II = 13 of 'call' operation ('tmp_s', conv.c:79) to 'conv_sum.16'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 26, distance = 1, offset = 1)
+   between 'call' operation ('tmp_s', conv.c:79) to 'conv_sum.16' and 'store' operation (conv.c:77) of variable 'input_load', conv.c:77 on array 'matrix_sum', conv.c:61.
+WARNING: [SCHED 204-62] II = 27 is infeasible due to multiple pipeline iteration latency = 29 and incompatible II = 13 of 'call' operation ('tmp_s', conv.c:79) to 'conv_sum.16'.
+WARNING: [SCHED 204-62] II = 28 is infeasible due to multiple pipeline iteration latency = 29 and incompatible II = 13 of 'call' operation ('tmp_s', conv.c:79) to 'conv_sum.16'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 29, distance = 1, offset = 1)
+   between 'call' operation ('tmp_s', conv.c:79) to 'conv_sum.16' and 'store' operation (conv.c:77) of variable 'input_load', conv.c:77 on array 'matrix_sum', conv.c:61.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 30, distance = 1, offset = 1)
+   between 'store' operation (conv.c:77) of variable 'input_load_50', conv.c:77 on array 'matrix_sum', conv.c:61 and 'call' operation ('tmp_s', conv.c:79) to 'conv_sum.16'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 143, distance = 1, offset = 1)
+   between 'store' operation (conv.c:77) of variable 'input_load_125', conv.c:77 on array 'matrix_sum', conv.c:61 and 'call' operation ('tmp_s', conv.c:79) to 'conv_sum.16'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 200, distance = 1, offset = 1)
+   between 'store' operation (conv.c:77) of variable 'input_load_175', conv.c:77 on array 'matrix_sum', conv.c:61 and 'call' operation ('tmp_s', conv.c:79) to 'conv_sum.16'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 228, distance = 1, offset = 1)
+   between 'store' operation (conv.c:77) of variable 'input_load_200', conv.c:77 on array 'matrix_sum', conv.c:61 and 'call' operation ('tmp_s', conv.c:79) to 'conv_sum.16'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 242, distance = 1, offset = 1)
+   between 'store' operation (conv.c:77) of variable 'input_load_225', conv.c:77 on array 'matrix_sum', conv.c:61 and 'call' operation ('tmp_s', conv.c:79) to 'conv_sum.16'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 249, distance = 1, offset = 1)
+   between 'store' operation (conv.c:77) of variable 'input_load_225', conv.c:77 on array 'matrix_sum', conv.c:61 and 'call' operation ('tmp_s', conv.c:79) to 'conv_sum.16'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 253, distance = 1, offset = 1)
+   between 'store' operation (conv.c:77) of variable 'input_load_225', conv.c:77 on array 'matrix_sum', conv.c:61 and 'call' operation ('tmp_s', conv.c:79) to 'conv_sum.16'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 255, distance = 1, offset = 1)
+   between 'store' operation (conv.c:77) of variable 'input_load_225', conv.c:77 on array 'matrix_sum', conv.c:61 and 'call' operation ('tmp_s', conv.c:79) to 'conv_sum.16'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 256, distance = 1, offset = 1)
+   between 'store' operation (conv.c:77) of variable 'input_load_225', conv.c:77 on array 'matrix_sum', conv.c:61 and 'call' operation ('tmp_s', conv.c:79) to 'conv_sum.16'.
+INFO: [SCHED 204-61] Unable to satisfy pipeline directive: Unable to pipeline the region.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 98.48 seconds; current allocated memory: 359.607 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 6.62 seconds; current allocated memory: 374.771 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Pool2_8x8x40_2x2x40_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1.1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 3.37 seconds; current allocated memory: 375.718 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.05 seconds; current allocated memory: 376.054 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fc_sum' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'fc_sum'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('p_of_matrix_load_4', fc.c:12) on array 'p_of_matrix' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'p_of_matrix'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 8, Depth = 22.
+WARNING: [SCHED 204-21] Estimated clock period (8.932ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+WARNING: [SCHED 204-21] The critical path consists of the following:
+	'mul' operation ('tmp_2', fc.c:12) (3.36 ns)
+	'add' operation ('tmp3', fc.c:12) (3.02 ns)
+	'add' operation ('tmp2', fc.c:12) (2.55 ns)
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.27 seconds; current allocated memory: 376.807 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.17 seconds; current allocated memory: 377.621 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Fc1_40_400' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 8, distance = 1, offset = 1)
+   between 'call' operation ('tmp_56', fc.c:30) to 'fc_sum' and 'call' operation ('tmp_55', fc.c:30) to 'fc_sum'.
+WARNING: [SCHED 204-62] II = 9 is infeasible due to multiple pipeline iteration latency = 22 and incompatible II = 8 of 'call' operation ('tmp_55', fc.c:30) to 'fc_sum'.
+WARNING: [SCHED 204-62] II = 10 is infeasible due to multiple pipeline iteration latency = 22 and incompatible II = 8 of 'call' operation ('tmp_55', fc.c:30) to 'fc_sum'.
+WARNING: [SCHED 204-62] II = 11 is infeasible due to multiple pipeline iteration latency = 22 and incompatible II = 8 of 'call' operation ('tmp_55', fc.c:30) to 'fc_sum'.
+WARNING: [SCHED 204-62] II = 12 is infeasible due to multiple pipeline iteration latency = 22 and incompatible II = 8 of 'call' operation ('tmp_55', fc.c:30) to 'fc_sum'.
+WARNING: [SCHED 204-62] II = 13 is infeasible due to multiple pipeline iteration latency = 22 and incompatible II = 8 of 'call' operation ('tmp_55', fc.c:30) to 'fc_sum'.
+WARNING: [SCHED 204-62] II = 14 is infeasible due to multiple pipeline iteration latency = 22 and incompatible II = 8 of 'call' operation ('tmp_55', fc.c:30) to 'fc_sum'.
+WARNING: [SCHED 204-62] II = 15 is infeasible due to multiple pipeline iteration latency = 22 and incompatible II = 8 of 'call' operation ('tmp_55', fc.c:30) to 'fc_sum'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 16, distance = 1, offset = 1)
+   between 'call' operation ('tmp_56', fc.c:30) to 'fc_sum' and 'call' operation ('tmp_55', fc.c:30) to 'fc_sum'.
+WARNING: [SCHED 204-62] II = 17 is infeasible due to multiple pipeline iteration latency = 22 and incompatible II = 8 of 'call' operation ('tmp_55', fc.c:30) to 'fc_sum'.
+WARNING: [SCHED 204-62] II = 18 is infeasible due to multiple pipeline iteration latency = 22 and incompatible II = 8 of 'call' operation ('tmp_55', fc.c:30) to 'fc_sum'.
+WARNING: [SCHED 204-62] II = 19 is infeasible due to multiple pipeline iteration latency = 22 and incompatible II = 8 of 'call' operation ('tmp_55', fc.c:30) to 'fc_sum'.
+WARNING: [SCHED 204-62] II = 20 is infeasible due to multiple pipeline iteration latency = 22 and incompatible II = 8 of 'call' operation ('tmp_55', fc.c:30) to 'fc_sum'.
+WARNING: [SCHED 204-62] II = 21 is infeasible due to multiple pipeline iteration latency = 22 and incompatible II = 8 of 'call' operation ('tmp_55', fc.c:30) to 'fc_sum'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 22, distance = 1, offset = 1)
+   between 'call' operation ('tmp_56', fc.c:30) to 'fc_sum' and 'call' operation ('tmp_55', fc.c:30) to 'fc_sum'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 23, distance = 1, offset = 1)
+   between 'call' operation ('tmp_56', fc.c:30) to 'fc_sum' and 'call' operation ('tmp_55', fc.c:30) to 'fc_sum'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 140, distance = 1, offset = 1)
+   between 'call' operation ('tmp_61', fc.c:30) to 'fc_sum' and 'call' operation ('tmp_55', fc.c:30) to 'fc_sum'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 198, distance = 1, offset = 1)
+   between 'call' operation ('tmp_64', fc.c:30) to 'fc_sum' and 'call' operation ('tmp_55', fc.c:30) to 'fc_sum'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 227, distance = 1, offset = 1)
+   between 'call' operation ('tmp_65', fc.c:30) to 'fc_sum' and 'call' operation ('tmp_55', fc.c:30) to 'fc_sum'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 242, distance = 1, offset = 1)
+   between 'call' operation ('tmp_66', fc.c:30) to 'fc_sum' and 'call' operation ('tmp_55', fc.c:30) to 'fc_sum'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 249, distance = 1, offset = 1)
+   between 'call' operation ('tmp_66', fc.c:30) to 'fc_sum' and 'call' operation ('tmp_55', fc.c:30) to 'fc_sum'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 253, distance = 1, offset = 1)
+   between 'call' operation ('tmp_66', fc.c:30) to 'fc_sum' and 'call' operation ('tmp_55', fc.c:30) to 'fc_sum'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 255, distance = 1, offset = 1)
+   between 'call' operation ('tmp_66', fc.c:30) to 'fc_sum' and 'call' operation ('tmp_55', fc.c:30) to 'fc_sum'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 256, distance = 1, offset = 1)
+   between 'call' operation ('tmp_66', fc.c:30) to 'fc_sum' and 'call' operation ('tmp_55', fc.c:30) to 'fc_sum'.
+INFO: [SCHED 204-61] Unable to satisfy pipeline directive: Unable to pipeline the region.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.51 seconds; current allocated memory: 382.066 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.46 seconds; current allocated memory: 388.497 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'lenet_cnn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
+WARNING: [SCHED 204-21] Estimated clock period (9.634ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+WARNING: [SCHED 204-21] The critical path consists of the following:
+	'mul' operation ('tmp', fc.c:50->lenet_cnn_float.c:96) (3.36 ns)
+	'add' operation ('tmp_1', fc.c:50->lenet_cnn_float.c:96) (3.02 ns)
+	'getelementptr' operation ('fc2_kernel_addr', fc.c:50->lenet_cnn_float.c:96) (0 ns)
+	'load' operation ('fc2_kernel_load', fc.c:50->lenet_cnn_float.c:96) on array 'fc2_kernel' (3.25 ns)
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.53 seconds; current allocated memory: 388.815 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.36 seconds; current allocated memory: 389.896 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Conv1_28x28x1_5x5x20' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'Conv1_28x28x1_5x5x20_matrix_sum' to 'Conv1_28x28x1_5x5bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'lenet_cnn_fmul_32ns_32ns_32_4_max_dsp_1' to 'lenet_cnn_fmul_32cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'lenet_cnn_sitofp_32ns_32_6_1' to 'lenet_cnn_sitofp_dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'lenet_cnn_mul_16s_16s_32_2_1' to 'lenet_cnn_mul_16seOg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'lenet_cnn_fmul_32cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'lenet_cnn_mul_16seOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'lenet_cnn_sitofp_dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Conv1_28x28x1_5x5x20'.
+INFO: [HLS 200-111]  Elapsed time: 1.2 seconds; current allocated memory: 391.950 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Pool1_24x24x20_2x2x2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Pool1_24x24x20_2x2x2'.
+INFO: [HLS 200-111]  Elapsed time: 0.34 seconds; current allocated memory: 395.295 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv_sum_16' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'lenet_cnn_mul_mul_6ns_11ns_16_1_1' to 'lenet_cnn_mul_mulfYi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'lenet_cnn_fmul_32cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'lenet_cnn_mul_16seOg': 25 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'lenet_cnn_mul_mulfYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'lenet_cnn_sitofp_dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_sum_16'.
+INFO: [HLS 200-111]  Elapsed time: 0.25 seconds; current allocated memory: 398.850 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Conv2_12x12x20_5x5x4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'Conv2_12x12x20_5x5x4_matrix_sum' to 'Conv2_12x12x20_5xg8j' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Conv2_12x12x20_5x5x4'.
+INFO: [HLS 200-111]  Elapsed time: 3.56 seconds; current allocated memory: 431.590 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Pool2_8x8x40_2x2x40_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Pool2_8x8x40_2x2x40_s'.
+INFO: [HLS 200-111]  Elapsed time: 5.58 seconds; current allocated memory: 472.061 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fc_sum' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'lenet_cnn_mul_mul_16s_16s_32_1_1' to 'lenet_cnn_mul_mulhbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'lenet_cnn_mac_muladd_16s_16s_32s_32_1_1' to 'lenet_cnn_mac_mulibs' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'lenet_cnn_fmul_32cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'lenet_cnn_mac_mulibs': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'lenet_cnn_mul_mulhbi': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'lenet_cnn_sitofp_dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fc_sum'.
+INFO: [HLS 200-111]  Elapsed time: 0.39 seconds; current allocated memory: 474.731 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Fc1_40_400' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Fc1_40_400'.
+INFO: [HLS 200-111]  Elapsed time: 1.24 seconds; current allocated memory: 490.702 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'lenet_cnn' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet_cnn/input_r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet_cnn/conv1_kernel' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet_cnn/conv1_bias' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet_cnn/conv2_kernel' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet_cnn/conv2_bias' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet_cnn/fc1_kernel' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet_cnn/fc1_bias' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet_cnn/fc2_kernel' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet_cnn/fc2_bias' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet_cnn/output_r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'lenet_cnn' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'lenet_cnn_conv1_output' to 'lenet_cnn_conv1_ojbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'lenet_cnn_pool1_output' to 'lenet_cnn_pool1_okbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'lenet_cnn_conv2_output' to 'lenet_cnn_conv2_olbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'lenet_cnn_pool2_output' to 'lenet_cnn_pool2_omb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'lenet_cnn_fc1_output' to 'lenet_cnn_fc1_outncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'lenet_cnn_mac_muladd_4ns_10ns_9ns_13_1_1' to 'lenet_cnn_mac_mulocq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'lenet_cnn_mac_muladd_15ns_16s_32ns_32_1_1' to 'lenet_cnn_mac_mulpcA' due to the length limit 20
+WARNING: [RTGEN 206-101] Port 'lenet_cnn/fc2_bias_address0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'lenet_cnn/fc2_bias_address0' to 0.
+WARNING: [RTGEN 206-101] Port 'lenet_cnn/fc2_bias_ce0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'lenet_cnn/fc2_bias_ce0' to 0.
+WARNING: [RTGEN 206-101] Port 'lenet_cnn/fc2_bias_we0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'lenet_cnn/fc2_bias_we0' to 0.
+WARNING: [RTGEN 206-101] Port 'lenet_cnn/fc2_bias_d0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'lenet_cnn/fc2_bias_d0' to 0.
+WARNING: [RTGEN 206-101] Port 'lenet_cnn/fc2_bias_q0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'lenet_cnn/fc2_bias_address1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'lenet_cnn/fc2_bias_address1' to 0.
+WARNING: [RTGEN 206-101] Port 'lenet_cnn/fc2_bias_ce1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'lenet_cnn/fc2_bias_ce1' to 0.
+WARNING: [RTGEN 206-101] Port 'lenet_cnn/fc2_bias_we1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'lenet_cnn/fc2_bias_we1' to 0.
+WARNING: [RTGEN 206-101] Port 'lenet_cnn/fc2_bias_d1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'lenet_cnn/fc2_bias_d1' to 0.
+WARNING: [RTGEN 206-101] Port 'lenet_cnn/fc2_bias_q1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Generating core module 'lenet_cnn_mac_mulocq': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'lenet_cnn_mac_mulpcA': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'lenet_cnn'.
+INFO: [HLS 200-111]  Elapsed time: 1.24 seconds; current allocated memory: 497.113 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'lenet_cnn_mul_16seOg_MulnS_0'
+INFO: [RTMG 210-278] Implementing memory 'Conv1_28x28x1_5x5bkb_ram (RAM)' using distributed RAMs.
+INFO: [RTMG 210-278] Implementing memory 'Conv2_12x12x20_5xg8j_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'lenet_cnn_conv1_ojbC_ram (RAM_1P_LUTRAM)' using distributed RAMs.
+INFO: [RTMG 210-278] Implementing memory 'lenet_cnn_pool1_okbM_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'lenet_cnn_conv2_olbW_ram (RAM_2P_BRAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'lenet_cnn_pool2_omb6_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'lenet_cnn_fc1_outncg_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:03:29 ; elapsed = 00:03:34 . Memory (MB): peak = 881.812 ; gain = 512.000 ; free physical = 7803 ; free virtual = 27886
+INFO: [SYSC 207-301] Generating SystemC RTL for lenet_cnn.
+INFO: [VHDL 208-304] Generating VHDL RTL for lenet_cnn.
+INFO: [VLOG 209-307] Generating Verilog RTL for lenet_cnn.
+INFO: [HLS 200-112] Total elapsed time: 214.84 seconds; peak allocated memory: 497.113 MB.

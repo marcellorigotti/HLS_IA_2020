@@ -1,0 +1,35 @@
+INFO: [HLS 200-10] Running '/opt/Xilinx/Vivado/2018.2/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'gse5' on host 'administreur-OptiPlex-9020' (Linux_x86_64 version 4.15.0-115-generic) on Tue Sep 29 09:45:39 CEST 2020
+INFO: [HLS 200-10] On os Ubuntu 18.04.3 LTS
+INFO: [HLS 200-10] In directory '/home/gse5/Bureau/HLS_IA/FLOAT'
+INFO: [HLS 200-10] Opening project '/home/gse5/Bureau/HLS_IA/FLOAT/Float'.
+INFO: [HLS 200-10] Adding design file 'conv.c' to the project
+INFO: [HLS 200-10] Adding design file 'fc.c' to the project
+INFO: [HLS 200-10] Adding design file 'lenet_cnn_float.c' to the project
+INFO: [HLS 200-10] Adding design file 'lenet_weights.hdf5' to the project
+INFO: [HLS 200-10] Adding design file 'pool.c' to the project
+INFO: [HLS 200-10] Adding design file 'utils.c' to the project
+INFO: [HLS 200-10] Adding test bench file 'lenet_cnn_float.c' to the project
+INFO: [HLS 200-10] Adding test bench file 'mnist' to the project
+INFO: [HLS 200-10] Opening solution '/home/gse5/Bureau/HLS_IA/FLOAT/Float/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+WARNING: [HLS 200-40] Skipped source file 'lenet_weights.hdf5'. Source files must have extensions .c, .C, .cc, .cpp, .c++, .cp, or .cxx.
+INFO: [HLS 200-10] Analyzing design file 'utils.c' ... 
+WARNING: [HLS 200-40] clang: warning: -l/usr/include/hdf5/serial/.-O3: 'linker' input unused when '-E' is present
+utils.c:16:10: fatal error: 'hdf5.h' file not found
+#include "hdf5.h"
+         ^
+1 error generated.\n
+C preprocessor failed.
+    while executing
+"source /home/gse5/Bureau/HLS_IA/FLOAT/Float/solution1/csynth.tcl"
+    invoked from within
+"hls::main /home/gse5/Bureau/HLS_IA/FLOAT/Float/solution1/csynth.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel 1 hls::main {*}$args"
+    (procedure "hls_proc" line 5)
+    invoked from within
+"hls_proc $argv"
